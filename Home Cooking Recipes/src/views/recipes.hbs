@@ -1,0 +1,24 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+
+<main>
+    <h2>Recipe Catalog</h2>
+    <section class="recipes">
+          {{#if allRecipes}}
+        {{#each allRecipes}}
+        <article class="recipe">
+            <img src="{{image}}"
+                alt="{{title}}">
+            <h3>{{title}}</h3>
+            <p>{{description}}</p>
+            <a href="/recipes/{{_id}}/details">Read More</a>
+        </article>
+        {{/each}}
+        </article>
+        {{else}}
+        <p class="no-post">There are no recipes found yet!</p>
+        {{/if}}
+    </section>
+</main>

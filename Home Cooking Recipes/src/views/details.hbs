@@ -1,0 +1,41 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <article class="recipe-detail">
+            <img src="{{recipe.image}}" alt="{{recipe.title}}">
+            <h2>{{recipe.title}}</h2>
+            <p>{{recipe.description}}</p>
+
+            <h3>-----------------------------------------------------</h3>
+
+            <h3>Ingredients:</h3>
+            <p>{{recipe.Ingredients}}</p>
+
+            <h3>-----------------------------------------------------</h3>
+
+            <h3>Instructions:</h3>
+            <p>{{recipe.instructions}}</p>
+
+            <h3>-----------------------------------------------------</h3>
+
+            <h3>People Who Recommend: {{recommend}}</h3>
+        </article>
+        <div class="command">
+            {{#if userId}}
+            {{#if isOwner}}
+            <a href="/recipes/{{recipe._id}}/details/edit">Edit</a>
+            <a href="/recipes/{{recipe._id}}/details/delete">Delete</a>
+            {{else}}
+            {{#if isLike}}
+            <p>You've already recommended this recipe!</p>
+            {{else}}
+            <a href="/recipes/{{recipe._id}}/details/recommend">Recommend</a>
+            {{/if}}
+            {{/if}}
+            {{/if}}
+        </div>
+    </main>
+</body>
