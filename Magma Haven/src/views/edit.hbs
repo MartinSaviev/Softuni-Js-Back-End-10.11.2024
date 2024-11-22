@@ -1,0 +1,30 @@
+<section id="edit-container">
+    <div class="edit-container-info">
+        <h1>Edit Announcement</h1>
+        <form action="#" method="POST">
+            <label>Name:</label>
+            <input type="text" id="name" name="name" value="{{details.name}}">
+            <label>Location:</label>
+            <input type="text" id="location" name="location" value="{{details.location}}">
+            <label>Elevation:</label>
+            <input type="number" id="elevations" name="elevation" value="{{details.elevation}}">
+            <label>Year of Last Eruption:</label>
+            <input type="number" id="last-year-eruption" name="lastEruption" value="{{details.lastEruption}}">
+            <label>Image:</label>
+            <input type="text" id="image" name="image"
+                value="{{details.image}}">
+            <label>Volcano Type:</label>
+            <select id="type" name="typeVolcano">
+               {{#each typeSelected}}
+                <option value="{{typeVolcano}}" {{selected}}>
+                    {{label}}</option>
+
+                {{/each}}
+            </select>
+            <label>Description:</label>
+            <textarea id="description" name=""
+                placeholder="...">Hunga Tonga-Hunga is a submarine volcano in the South Pacific located about 30 km south of the submarine volcano of Fonuafo'ou and 65 km north of Tongatapu, Tonga's main island. It is part of the highly active Kermadec-Tonga subduction zone and its associated volcanic arc, which extends from New Zealand north-northeast to Fiji, and is formed by the subduction of the Pacific Plate under the Indo-Australian Plate. It lies about 100 km above a very active seismic zone.</textarea>
+            <input type="submit" id="btn" value="Submit"></input>
+        </form>
+    </div>
+</section>
